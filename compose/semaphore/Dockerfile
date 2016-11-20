@@ -62,5 +62,6 @@ ENV GIN_MODE release
 WORKDIR /home/webserver
 EXPOSE 3000
 
+USER root
 ENTRYPOINT /docker-entrypoint.sh
 #ENTRYPOINT ["/docker-entrypoint-initdb.d/semaphore.sh"]
