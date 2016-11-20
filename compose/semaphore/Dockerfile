@@ -23,8 +23,6 @@ RUN groupadd -g 10000 webserver && \
     ln -s /bin/bash /bin/sh && \
     mkdir -p /home/webserver/.ssh/
 
-COPY ./docker-entrypoint.sh /
-
 ARG ANSIBLE_VERSION=2.1.1
 
 RUN virtualenv --no-site-packages /home/webserver/defaultenv && \
@@ -56,6 +54,7 @@ RUN chmod +x /usr/bin/semaphore && \
     mkdir /tmp/semaphore && \
     chown webserver:webserver /tmp/semaphore
 
+COPY ./docker-entrypoint.sh /
 COPY ./semaphore.sh /docker-entrypoint-initdb.d/
 USER webserver
 
