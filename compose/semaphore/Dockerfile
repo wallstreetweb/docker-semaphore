@@ -40,8 +40,6 @@ RUN mkdir -p ansible/{playbooks,roles,files} && \
 COPY ./ansible.cfg ansible/
 
 RUN chown -R webserver:webserver /home/webserver
-RUN ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-RUN ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
 USER webserver
 
 WORKDIR /home/webserver/ansible
