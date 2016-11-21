@@ -63,6 +63,8 @@ WORKDIR /home/webserver
 EXPOSE 3000
 
 USER root
-COPY ./config /root/.ssh
+COPY ./ssh_config /root/.ssh/config
+RUN chmod 700 /root/.ssh/
+
 ENTRYPOINT /docker-entrypoint.sh
 #ENTRYPOINT ["/docker-entrypoint-initdb.d/semaphore.sh"]
