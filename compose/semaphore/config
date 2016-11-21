@@ -1,0 +1,5 @@
+Host *
+  StrictHostKeyChecking no
+  CheckHostIp no
+  PasswordAuthentication no
+  PreferredAuthentications publickey
